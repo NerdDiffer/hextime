@@ -1,0 +1,24 @@
+{
+  "name": "hexTime",
+  "version": "0.1.0",
+  "description": "time in hexadecimal format",
+  "keywords": [
+    "base",
+    "hexadecimal",
+    "time"
+  ],
+  "author": {
+    "name": "Rafael Espinoza",
+    "email": "rafael@rafaelespinoza.com",
+    "url": "http://www.rafaelespinoza.com"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "preferGlobal": false,
+  "private": true
+}
