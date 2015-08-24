@@ -1,2 +1,2 @@
-##baseTime
+##hexTime
 time in hexadecimal format

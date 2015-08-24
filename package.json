@@ -1,6 +1,6 @@
 {
   "name": "hexTime",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "time in hexadecimal format",
   "keywords": [
     "base",
@@ -12,7 +12,6 @@
     "email": "rafael@rafaelespinoza.com",
     "url": "http://www.rafaelespinoza.com"
   },
-  "main": "./index.js",
   "repository": {
     "type": "git"
   },
@@ -20,5 +19,9 @@
     "mocha": "*"
   },
   "preferGlobal": false,
-  "private": true
+  "private": true,
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha spec/*js"
+  }
 }

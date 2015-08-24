@@ -1,9 +1,9 @@
-var TimeObj = require('./dev/TimeObj')
-  , tools = require('./dev/tools');
+var TimeObj = require('./lib/TimeObj')
+  , helpers = require('./lib/helpers');
 
 module.exports = {
-  HexTime: TimeObj.HexTime,
-  DecTime: TimeObj.DecTime,
-  preProcess: tools.preProcess,
-  splitTime: tools.splitTime
+  HexTime:    TimeObj.HexTime,
+  DecTime:    TimeObj.DecTime,
+  preProcess: helpers.preProcess,
+  splitTime:  helpers.splitTime
 };

@@ -1,22 +1,19 @@
 var assert = require('assert')
-  , TimeObj = require('../dev/TimeObj')
-  , tools = require('../dev/tools')
+  , TimeObj = require('../lib/TimeObj')
   , base = require('all-your-base');
 
 var decToHex = base.decToHex
-  , hexToDec = base.hexToDec
-  , preProcess = tools.preProcess
-  , splitTime = tools.splitTime;
+  , hexToDec = base.hexToDec;
 
 var basicTimeObj = TimeObj.Time
   , hexTime = TimeObj.HexTime
   , decTime = TimeObj.DecTime;
 
-var propsFromTimeObj = 'ssInHH,ssInDD,mmInDD,logEnumProps,logAllProps,getHHFromSS,getDDFromMM,getDDFromSS,collectSeconds,getPortions,currentSecInDay';
 
 describe('Time', function() {
+  var propsFromTimeObj = 'ssInHH,ssInDD,mmInDD,logEnumProps,logAllProps,getHHFromSS,getDDFromMM,getDDFromSS,collectSeconds,getPortions,currentSecInDay';
   it("should provide these basic properties", function() {
-    assert.equal(propsFromTimeObj, Object.keys(basicTimeObj)); 
+    assert.equal(propsFromTimeObj, basicTimeObj.logEnumProps());
   });
 });
 describe('HexTime', function() {
@@ -146,7 +143,7 @@ describe('DecTime', function() {
     assert.equal(1440, decTime.mmInDD());
   });
   describe('#collectSeconds', function() {
-    it("should parse a time, passed in as a string, and return number of seconds that add up to the hour, add up to minutes, add up to seconds", function() {
+    it("should parse a time and return a list of the number of seconds adding up to hours, number of seconds adding up to minutes and number of seconds", function() {
       var sampleTime1 = '18:32:47';
       var sampleTime2 = '23:59:59';
       assert.equal(
@@ -168,8 +165,14 @@ describe('DecTime', function() {
         [0.75, 0.5333, 0.7833].toString(), 
         decTime.getPortions(sampleTime1)
       );
-      assert.equal([0,0,0].toString(), decTime.getPortions(sampleTime2));
-      assert.equal([0.50,0.50,0.50].toString(), decTime.getPortions(sampleTime3));
+      assert.equal(
+        [0,0,0].toString(),
+        decTime.getPortions(sampleTime2)
+      );
+      assert.equal(
+        [0.50,0.50,0.50].toString(),
+        decTime.getPortions(sampleTime3)
+      );
     });
   });
   describe('#currentSecInDay', function() {
