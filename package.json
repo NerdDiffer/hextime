@@ -1,6 +1,6 @@
 {
   "name": "hexTime",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "time in hexadecimal format",
   "keywords": [
     "base",
@@ -23,5 +23,8 @@
   "main": "./index.js",
   "scripts": {
     "test": "mocha spec/*js"
+  },
+  "dependencies": {
+    "all-your-base": "^0.2.1"
   }
 }

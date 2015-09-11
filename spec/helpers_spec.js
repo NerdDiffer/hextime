@@ -1,30 +1,60 @@
 var assert = require('assert')
   , helpers = require('../lib/helpers');
 
-var preProcess = helpers.preProcess
-  , splitTime  = helpers.splitTime;
+var preProcess = helpers.preProcess;
 
-describe('preProcess', function() {
+describe('Helper methods', function() {
 
-  var date1 = new Date(2014,10,27,15,06,36);
-  var dateStr = new Date('Mon Oct 27 2014 15:06:36 GMT-0700 (PDT)');
+  var date = new Date(2014,10,27,15,06,36);
 
-  it('should take in a Date object, convert it to a timeString using the prototype method, #toTimeString, and return the first 8 characters', function() {
-    var now = new Date();
-    assert.equal(now.toTimeString().slice(0,8), preProcess(now));
-  });
+  describe('preProcess', function() {
 
-  it('should take a new Date object & extract the time portion as a string', function() {
-    assert.equal('15:06:36', preProcess(date1));
-    assert.equal('15:06:36', preProcess(dateStr));
-  });
+    context('first parameter', function() {
+      it('expects a Date object as first parameter', function() {
+        assert.equal(date.constructor, Date);
+      });
+    });
 
-  it('should accept optional parameter, del, to delimit hours, minutes, seconds', function() {
-    assert.equal('15_06_36', preProcess(date1, '_'));
-  });
+    context('optional 2nd parameter', function() {
 
-  it('should also let you pass in empty string as optional 2nd parameter', function() {
-    assert.equal('150636', preProcess(date1, ''));
+      it('when passed nothing, will delimit by `:`', function() {
+        assert.equal(
+          preProcess(date),
+          '15:06:36'
+        );
+      });
+
+      it('accepts an optional parameter as delimiter', function() {
+        assert.equal(
+          preProcess(date, '_'),
+          '15_06_36'
+        );
+      });
+
+      it('also accepts an empty string', function() {
+        assert.equal(
+          preProcess(date, ''),
+          '150636'
+        );
+      });
+    });
+
+    context('expected return values', function() {
+      it('returns the first 8 characters of the time', function() {
+        var now = new Date();
+        assert.equal(
+          preProcess(now),
+          now.toTimeString().slice(0,8)
+        );
+      });
+
+      it('returns the first 8 characters of the time', function() {
+        assert.equal(
+          preProcess(date),
+          '15:06:36'
+        );
+      });
+    });
   });
 
 });
