@@ -1,20 +1,16 @@
 {
   "name": "hextime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "time in hexadecimal format",
   "keywords": [
     "base",
     "hexadecimal",
     "time"
   ],
-  "author": {
-    "name": "Rafael Espinoza",
-    "email": "rafael@rafaelespinoza.com",
-    "url": "http://www.rafaelespinoza.com"
-  },
+  "author": "Rafael Espinoza <rafael@rafaelespinoza.com> (http://www.rafaelespinoza.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NerdDiffer/hextime.git"
+    "url": "git+https://github.com/NerdDiffer/hextime.git"
   },
   "devDependencies": {
     "mocha": "*"
@@ -22,5 +18,11 @@
   "main": "./index.js",
   "scripts": {
     "test": "mocha spec/*js"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/NerdDiffer/hextime/issues"
+  },
+  "homepage": "https://github.com/NerdDiffer/hextime#readme",
+  "dependencies": {},
+  "license": "ISC"
 }
