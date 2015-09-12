@@ -23,8 +23,5 @@
   "main": "./index.js",
   "scripts": {
     "test": "mocha spec/*js"
-  },
-  "dependencies": {
-    "all-your-base": "^0.2.1"
   }
 }

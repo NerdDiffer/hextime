@@ -1,6 +1,8 @@
-var TimeObj = require('./lib/TimeObj.js');
+var correlationMethods = require('./lib/correlationMethods.js');
 
 module.exports = {
-  HexTime: TimeObj.HexTime,
-  DecTime: TimeObj.DecTime
+  HexTime: require('./lib/HexTime.js'),
+  RegTime: require('./lib/RegTime.js'),
+  fromHexadecimal: correlationMethods.fromHexadecimal,
+  fromRegular:     correlationMethods.fromRegular
 };
