@@ -1,6 +1,6 @@
 {
   "name": "hexTime",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "time in hexadecimal format",
   "keywords": [
     "base",
@@ -13,13 +13,12 @@
     "url": "http://www.rafaelespinoza.com"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/NerdDiffer/hexTime.git"
   },
   "devDependencies": {
     "mocha": "*"
   },
-  "preferGlobal": false,
-  "private": true,
   "main": "./index.js",
   "scripts": {
     "test": "mocha spec/*js"
