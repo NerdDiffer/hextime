@@ -1,4 +1,4 @@
-# hexTime
+# hextime
 
 The time based on powers of 16. See the bottom for usage.
 
@@ -62,6 +62,10 @@ Pretty cool, huh?
 
 ---
 
+## Installation
+
+`npm install hextime`
+
 ## Usage
 
 All numbers are expressed in base-10.
@@ -69,7 +73,7 @@ All numbers are expressed in base-10.
 #### Convert from regular units of time to hexadecimal units of time
 
 ```javascript
-var fromRegular = require('hexTime').fromRegular;
+var fromRegular = require('hextime').fromRegular;
 
 // convert regular seconds to a hexadecimal seconds
 fromRegular.toHexSec(86400);
@@ -84,7 +88,7 @@ fromRegular.toHexHour(24);
 #### Convert from hexadecimal units of time to regular units of time
 
 ```javascript
-var fromHexadecimal = require('hexTime').fromHexadecimal;
+var fromHexadecimal = require('hextime').fromHexadecimal;
 
 // convert hexadecimal seconds to a regular seconds
 fromHexadecimal.toRegSec(42);
@@ -99,7 +103,7 @@ fromHexadecimal.toRegHour(16);
 #### Use `HexTime` like a class
 
 ```javascript
-var HexTime = require('hexTime').HexTime;
+var HexTime = require('hextime').HexTime;
 
 // convert from regular time to hexadecimal time by passing it the
 // regular time as a string

@@ -1,5 +1,5 @@
 {
-  "name": "hexTime",
+  "name": "hextime",
   "version": "1.0.0",
   "description": "time in hexadecimal format",
   "keywords": [
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NerdDiffer/hexTime.git"
+    "url": "https://github.com/NerdDiffer/hextime.git"
   },
   "devDependencies": {
     "mocha": "*"
