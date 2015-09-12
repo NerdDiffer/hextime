@@ -1,5 +1,5 @@
-npm-debug.log
 node_modules/
-zzz-archive/
+npm-debug.log
+
+*.sw*
 .fuse_hidden*
-*.swp

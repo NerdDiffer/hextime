@@ -28,7 +28,7 @@ describe('HexTime', function() {
     });
   });
 
-  describe('#collectSeconds', function() {
+  describe('.collectSeconds', function() {
     var sampleTime1 = '08_128_08';
     var sampleTime2 = '15_240_15';
 
@@ -45,7 +45,7 @@ describe('HexTime', function() {
     });
   });
 
-  describe('#getPortions', function() {
+  describe('.getPortions', function() {
     var sampleTime1 = [61440, 3840, 15];
     var sampleTime2 = [0, 0, 0];
     var sampleTime3 = [32768, 2048, 8];
@@ -66,7 +66,7 @@ describe('HexTime', function() {
     });
   });
 
-  describe('#convertToHexTime', function() {
+  describe('.convertToHexTime', function() {
     var str1 = '12:00:00';
     var str2 = '6:30:00';
 
@@ -82,7 +82,7 @@ describe('HexTime', function() {
     });
   });
 
-  describe('#getHexSum', function() {
+  describe('.getHexSum', function() {
     var str1 = '12:00:00';
     var str2 = '06:00:00';
     var str3 = '17:29:00';
@@ -94,7 +94,7 @@ describe('HexTime', function() {
     });
   });
 
-  describe('#currentSecInDay', function() {
+  describe('.currentSecInDay', function() {
     var str1 = '8:0:0';
     var str2 = '00:00:00';
     var str3 = '15:255:15';
@@ -106,9 +106,9 @@ describe('HexTime', function() {
     });
   });
 
-  describe('relating hexadecimal time units to other hexadecimal time units', function() {
+  describe('Relating hexadecimal time units to other hexadecimal time units', function() {
 
-    describe('#getHHFromSS', function() {
+    describe('.getHHFromSS', function() {
       it('converts hexadecimal seconds to hexadecimal hours', function() {
         assert.equal(hexTime.getHHFromSS(4096), 1);
         assert.equal(hexTime.getHHFromSS(8192), 2);
@@ -117,7 +117,7 @@ describe('HexTime', function() {
       });
     });
 
-    describe('#getDDFromMM', function() {
+    describe('.getDDFromMM', function() {
       it('converts hexadecimal minutes to hexadecimal days', function() {
         assert.equal(hexTime.getDDFromMM(4096), 1);
         assert.equal(hexTime.getDDFromMM(2048), 0.5);
@@ -127,7 +127,7 @@ describe('HexTime', function() {
       });
     });
 
-    describe('#getDDFromSS', function() {
+    describe('.getDDFromSS', function() {
       it('converts hexadecimal seconds to hexadecimal days', function() {
         assert.equal(hexTime.getDDFromSS(65536), 1);
       });

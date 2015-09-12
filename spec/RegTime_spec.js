@@ -28,7 +28,7 @@ describe('RegTime', function() {
     });
   });
 
-  describe('#collectSeconds', function() {
+  describe('.collectSeconds', function() {
     var sampleTime1 = '18:32:47';
     var sampleTime2 = '23:59:59';
 
@@ -44,7 +44,7 @@ describe('RegTime', function() {
     });
   });
 
-  describe('#getPortions', function() {
+  describe('.getPortions', function() {
     var sampleTime1 = [64800, 1920, 47];
     var sampleTime2 = [0, 0, 0];
     var sampleTime3 = [43200, 1800, 30];
@@ -65,7 +65,7 @@ describe('RegTime', function() {
     });
   });
 
-  describe('#currentSecInDay', function() {
+  describe('.currentSecInDay', function() {
     var str1 = '15:06:36';
     var str2 = '00:00:00';
     var str3 = '23:59:59';
@@ -77,22 +77,22 @@ describe('RegTime', function() {
     });
   });
 
-  describe('relating time units to other regular time units', function() {
-    describe('#getHHFromSS', function() {
+  describe('Relating time units to other regular time units', function() {
+    describe('.getHHFromSS', function() {
       it('converts regular seconds to regular hours', function() {
         assert.equal(regTime.getHHFromSS(3600), 1);
         assert.equal(regTime.getHHFromSS(7200), 2);
         assert.equal(regTime.getHHFromSS(5400), 1.5);
       });
     });
-    describe('#getDDFromMM', function() {
+    describe('.getDDFromMM', function() {
       it('converts regular minutes to regular days', function() {
         assert.equal(regTime.getDDFromMM(1440), 1);
         assert.equal(regTime.getDDFromMM(2880), 2);
         assert.equal(regTime.getDDFromMM(2160), 1.5);
       });
     });
-    describe('#getDDFromSS', function() {
+    describe('.getDDFromSS', function() {
       it('converts regular seconds to regular days', function() {
         assert.equal(regTime.getDDFromSS(86400), 1);
         assert.equal(regTime.getDDFromSS(43200), 0.5);
